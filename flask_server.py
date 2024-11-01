@@ -3,7 +3,7 @@ import tweepy
 import os
 from dotenv import load_dotenv
 
-app = Flask(__name__)
+app = Flask(__name__
 load_dotenv()
 
 Client = tweepy.Client(bearer_token=os.getenv("BEARER_TOKEN"),
