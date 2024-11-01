@@ -31,12 +31,12 @@ Sebelum memulai, pastikan Anda memiliki hal-hal berikut:
     ```bash
     python -m venv venv
 3. **Aktifkan virtual environment**
-- di windows
-    ```bash
-  venv\Scripts\activate
-- di macOS
-    ```bash
-  source venv/bin/activate
+   - di windows
+       ```bash
+     venv\Scripts\activate
+   - di macOS
+       ```bash
+     source venv/bin/activate
 4. **Install Dependensi**
     ```bash
    pip install -r requirements.txt
