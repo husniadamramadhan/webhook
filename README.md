@@ -47,7 +47,11 @@ Sebelum memulai, pastikan Anda memiliki hal-hal berikut:
    TWITTER_API_KEY_SECRET=<your_api_secret_key>
    ACCESS_TOKEN=<your_access_token>
    ACCESS_TOKEN_SECRET=<your_access_token_secret>
+   BEARER_TOKEN=<your_bearer_token>
+   WEBHOOK_TOKEN=<your_webhook_token>
+  
 Catatan: Pastikan permission di [Twitter Developer Portal](https://developer.x.com/en/portal/projects-and-apps) diatur dengan benar Read and Write
+Untuk webhook_token didapatkan di trakteer.
 
 ## Penggunaan 
 1. **Jalankan Server**

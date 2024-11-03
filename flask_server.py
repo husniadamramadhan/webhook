@@ -3,7 +3,7 @@ import tweepy
 import os
 from dotenv import load_dotenv
 
-app = Flask(__name__
+app = Flask(__name__)
 load_dotenv()
 
 Client = tweepy.Client(bearer_token=os.getenv("BEARER_TOKEN"),
@@ -11,6 +11,7 @@ Client = tweepy.Client(bearer_token=os.getenv("BEARER_TOKEN"),
                        consumer_secret=os.getenv("TWITTER_API_KEY_SECRET"),
                        access_token=os.getenv("ACCESS_TOKEN"),
                        access_token_secret=os.getenv("ACCESS_TOKEN_SECRET"))
+webhook_token = os.getenv("WEBHOOK_TOKEN")
 
 @app.route('/', methods=['GET'])
 def hello():
@@ -18,6 +19,10 @@ def hello():
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
+    token = request.headers.get("X-Webhook-Token")
+    if token != webhook_token:
+        return jsonify({"message": "Unauthorized"}), 403
+
     data = request.get_json()
 
     print("Data received", data)
